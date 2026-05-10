@@ -15,7 +15,6 @@ const serviceSchema = mongoose.Schema({
     tag:{
         type:String,
         required:[true,"Tag is Required"],
-        unique:[true,"Tag must be Unique"]
 
     }
 
