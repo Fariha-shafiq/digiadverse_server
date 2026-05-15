@@ -2,10 +2,12 @@
 import mongoose from "mongoose";
 
 const projectSchema = new mongoose.Schema({
-  projectTitle:    { type: String, required: true },
+  projectTitle:    { type: String, default: "" },
   projectImage:    { type: String, default: "" },
   projectCategory: { type: String, default: "" },
   projectLink:     { type: String, default: "" },
+  projectId:       { type: String, default: "" },
+  projectSlug:     { type: String, default: "" },
 });
 
 const statSchema = new mongoose.Schema({
