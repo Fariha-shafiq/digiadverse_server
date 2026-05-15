@@ -1,8 +1,11 @@
 import { Router } from "express";
+
 import upload from "../middleware/uploads.js";
+
 import {
   getAllProjects,
   getProjectById,
+  getProjectBySlug,
   createProject,
   updateProject,
   deleteProject,
@@ -10,8 +13,16 @@ import {
 
 const projectRouter = Router();
 
+// GET ALL
 projectRouter.get("/", getAllProjects);
-projectRouter.get("/:id", getProjectById);
+
+// GET BY SLUG
+projectRouter.get("/slug/:slug", getProjectBySlug);
+
+// GET BY ID
+projectRouter.get("/id/:id", getProjectById);
+
+// CREATE
 projectRouter.post(
   "/",
   upload.fields([
@@ -20,6 +31,8 @@ projectRouter.post(
   ]),
   createProject
 );
+
+// UPDATE
 projectRouter.put(
   "/:id",
   upload.fields([
@@ -28,6 +41,8 @@ projectRouter.put(
   ]),
   updateProject
 );
+
+// DELETE
 projectRouter.delete("/:id", deleteProject);
 
 export default projectRouter;
