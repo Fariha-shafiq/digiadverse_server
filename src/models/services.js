@@ -59,6 +59,12 @@ const serviceSchema = new mongoose.Schema(
     ctaLabel:        { type: String, default: "Get Started" },
     ctaLink:         { type: String, default: "/contact" },
 
+    // ── Project images (ProjectSlider) ──────────────
+    projects: { type: [projectSchema], default: [] },
+
+    // ── Testimonials ────────────────────────────────
+    testimonials: { type: [testimonialSchema], default: [] },
+
     // ── ServiceStats ───────────────────────────────
     stats: { type: [statSchema], default: [] },
 
