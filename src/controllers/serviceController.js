@@ -46,7 +46,7 @@ export const createService = async (req, res) => {
       // meta
       title, slug, tag, icon, order, isActive,
       // hero
-      tagline, heroDescription, heroImage, ctaLabel, ctaLink,
+      description, tagline, heroDescription, heroImage, ctaLabel, ctaLink,
       // sections
       projects, stats,
       detailHeading, detailBody, featureList,
@@ -58,7 +58,7 @@ export const createService = async (req, res) => {
 
     const service = new Service({
       title, slug, tag, icon, order, isActive,
-      tagline, heroDescription, heroImage, ctaLabel, ctaLink,
+      description, tagline, heroDescription, heroImage, ctaLabel, ctaLink,
       projects, stats,
       detailHeading, detailBody, featureList,
       mockupImage, mockupCaption, mockupBgColor,

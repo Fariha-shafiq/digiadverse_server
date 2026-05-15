@@ -50,6 +50,7 @@ const serviceSchema = new mongoose.Schema(
     isActive: { type: Boolean, default: true },
 
     // ── Hero (ServicesDisplay) ─────────────────────
+    description:     { type: String, default: "" },
     tagline:         { type: String, default: "" },
     heroDescription: { type: String, default: "" },
     heroImage:       { type: String, default: "" },
