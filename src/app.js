@@ -7,6 +7,7 @@ import industryRouter from "./routes/industryRoute.js";
 import projectRouter from "./routes/projectRoute.js";
 import blogRouter from "./routes/blogRoute.js";
 import leadRouter from "./routes/leadRoute.js";
+import uploadRouter from "./routes/uploadRoute.js";
 import { errorHandler } from "./middleware/errorMiddleware.js";
 
 const app = express();
@@ -20,6 +21,7 @@ app.use("/api/services", serviceRouter)
 app.use("/api/industries", industryRouter)
 app.use("/api/blogs", blogRouter)
 app.use("/api/leads", leadRouter)
+app.use("/api/upload", uploadRouter)
 
 app.use(errorHandler)
 
