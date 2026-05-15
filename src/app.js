@@ -10,9 +10,8 @@ import leadRouter from "./routes/leadRoute.js";
 import { errorHandler } from "./middleware/errorMiddleware.js";
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: ["https://digiadverse.com", "http://localhost:5173"] }));
 app.use(express.json());
-app.use(errorHandler)
 app.use("/uploads", express.static("uploads"));
 
 app.use("/api/auth", authRouter)
@@ -21,5 +20,7 @@ app.use("/api/services", serviceRouter)
 app.use("/api/industries", industryRouter)
 app.use("/api/blogs", blogRouter)
 app.use("/api/leads", leadRouter)
+
+app.use(errorHandler)
 
 export default app;
